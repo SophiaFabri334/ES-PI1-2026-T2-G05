@@ -21,4 +21,4 @@
 - MySQL
 - Python
   
-  # 📁 Estrutura do Projeto
+  #  Estrutura do Projeto
