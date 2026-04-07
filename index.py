@@ -15,7 +15,6 @@ while opcao != 3:
         opcao = 0
     print("----------------------------------\n")
 
-
     match opcao: 
         case 1:
             print("Opção de gerenciamento selecionado\n")

@@ -20,7 +20,7 @@ def inserir_mesarios(cpf, nome, senha):
 
 
 # inserção de dados - USUARIOS 
-def inserir_mesarios(cpf, nome, senha, numero_voto, ja_votou):
+def inserir_usuarios(cpf, nome, senha, numero_voto, ja_votou):
     sql = "INSERT INTO usuarios (cpf, nome_completo, login, senha, numero_voto, ja_votou) VALUES (%s, %s, %s, %s, %s, %s)"
     valores = (cpf, nome, nome+cpf, senha, numero_voto, ja_votou) #confirmar como salvar a senha com hash
     cursor.execute(sql, valores)
