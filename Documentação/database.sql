@@ -10,6 +10,7 @@ CREATE TABLE candidatos (
 -- Tabela de Eleitores
 CREATE TABLE eleitores (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    titulo_eleitor VARCHAR(12) UNIQUE NOT NULL,
     cpf VARCHAR(11) UNIQUE NOT NULL,
     -- UNIQUE impede CPFs repetidos
     nome_completo VARCHAR(100) NOT NULL,
