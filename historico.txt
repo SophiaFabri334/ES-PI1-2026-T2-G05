@@ -3,3 +3,9 @@ GERENCIMANETO - Cadastrar Eleitor
 GERENCIMANETO - Editar Eleitor
 GERENCIMANETO - Remover Eleitor
 GERENCIMANETO - Voltar ao menu principal
+MENU INICIAL - Ops! Houve um erro. Opção inválida
+MENU INICIAL - Ops! Houve um erro. Opção inválida
+Opção de gerenciamento selecionado
+GERENCIMANETO - Voltar ao menu principal
+Opção de votação selecionado
+VOTAÇÃO - Resultados

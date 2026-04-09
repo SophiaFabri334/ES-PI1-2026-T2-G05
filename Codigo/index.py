@@ -3,8 +3,8 @@
 # Arquivo principal do sistema
 # =============================================================================
 
-import consultas  # Modulo de conexao e queries do banco de dados
-import util       # Modulo de funcoes utilitarias (validacao, logs, etc.)
+import Codigo.consultas as consultas  # Modulo de conexao e queries do banco de dados
+import Codigo.util as util       # Modulo de funcoes utilitarias (validacao, logs, etc.)
 
 # =============================================================================
 # FUNCOES AUXILIARES

@@ -2,12 +2,13 @@ CREATE DATABASE sistema_eleicao;
 USE sistema_eleicao;
 -- Tabela de Candidatos (Necessária para validar o número do voto)
 CREATE TABLE candidatos (
-    numero INT PRIMARY KEY,
+    id_candidato INT AUTO_INCREMENT PRIMARY KEY,
+    numero INT UNIQUE,
     nome_candidato VARCHAR(100) NOT NULL,
     partido VARCHAR(20) NOT NULL
 );
--- Tabela de Usuários (Eleitores)
-CREATE TABLE usuarios (
+-- Tabela de Eleitores
+CREATE TABLE eleitores (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     cpf VARCHAR(11) UNIQUE NOT NULL,
     -- UNIQUE impede CPFs repetidos
@@ -15,18 +16,14 @@ CREATE TABLE usuarios (
     login VARCHAR(50) UNIQUE NOT NULL,
     -- UNIQUE impede logins repetidos
     senha VARCHAR(255) NOT NULL,
-    -- Recomenda-se salvar como Hash
-    numero_voto INT DEFAULT NULL,
-    -- O número que ele votou
+    -- Indica se o usuário já votou, para controle do voto único
     ja_votou BOOLEAN DEFAULT FALSE,
-    -- Controle de voto único
-    FOREIGN KEY (numero_voto) REFERENCES candidatos(numero)
+    -- Indica se o eleitor tbm é um mesário
+    mesario BOOLEAN DEFAULT FALSE
 );
--- Tabela de Mesários
-CREATE TABLE mesarios (
-    id_mesario INT AUTO_INCREMENT PRIMARY KEY,
-    cpf VARCHAR(11) UNIQUE NOT NULL,
-    nome_completo VARCHAR(100) NOT NULL,
-    login VARCHAR(50) UNIQUE NOT NULL,
-    senha VARCHAR(255) NOT NULL
+-- Tabela de votos - faz a relação dos em cada candidato
+CREATE TABLE votos (
+    id_voto INT AUTO_INCREMENT PRIMARY KEY,
+    id_candidato INT,
+    FOREIGN KEY (id_candidato) REFERENCES candidatos(id_candidato)
 )
